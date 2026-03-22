@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* App root sizing */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Global base theme */
+body {
+  @apply bg-black text-white font-sans m-0;
+}
+/* ===== Premium Animations ===== */
+
+.card-premium {
+  @apply transition-all duration-300 ease-out;
+}
+
+.card-premium:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 16px;
+  background: linear-gradient(
+    120deg,
+    rgba(59,130,246,0.4),
+    rgba(168,85,247,0.4),
+    rgba(59,130,246,0.4)
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+.img-hover {
+  transition: transform 0.4s ease;
+}
+
+.card-premium:hover .img-hover {
+  transform: scale(1.08);
+}
+
+.btn-premium {
+  @apply transition-all duration-200;
+}
+
+.btn-premium:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+.btn-premium:active {
+  transform: scale(0.96);
+}
